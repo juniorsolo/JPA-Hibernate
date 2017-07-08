@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import br.com.alura.financas.util.JPAUtil;
+
 public class TesteConta {
 
 	public static void main(String[] args) {
@@ -12,19 +14,19 @@ public class TesteConta {
 		Conta c = new Conta();
 		
 		c.setAgencia("4521");
-		c.setTitular("Leonardo");
+		c.setTitular("Danilo");
 		c.setNumero("54265");
-		c.setBanco("Caixa Economica");
+		c.setBanco("Banco do Brasil");
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("financas");
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = new JPAUtil().getEntityManager();
 	    
 		em.getTransaction().begin();
 		em.persist(c);
+		c.setBanco("Bradesco Prime");
 		em.getTransaction().commit();
 		
 		em.close();
-		emf.close();
+	
 	}
 
 }
