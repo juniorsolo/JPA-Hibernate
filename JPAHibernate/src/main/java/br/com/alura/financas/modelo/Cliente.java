@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Cliente {
@@ -15,6 +17,10 @@ public class Cliente {
 	private String profissao;
 	private String endereco;
 	
+	//Join column evita q a mesma conta seja inserida para clientes diferentes
+	@JoinColumn(unique=true)
+	@OneToOne
+	private Conta conta;
 	
 	public Integer getId() {
 		return id;
@@ -39,6 +45,12 @@ public class Cliente {
 	}
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+	public Conta getConta() {
+		return conta;
+	}
+	public void setConta(Conta conta) {
+		this.conta = conta;
 	}
 	
 	

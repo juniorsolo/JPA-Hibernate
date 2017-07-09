@@ -27,6 +27,11 @@ public class PopulaConta {
 			conta2.setAgencia("1745");
 			conta2.setTitular("Paulo Roberto Souza");
 
+			conta2.setBanco("238 - BANCO BRADESCO EXCLUSIVE");
+			conta2.setNumero("89854-1");
+			conta2.setAgencia("5412");
+			conta2.setTitular("Ricardo Augusto Teixeira");
+			
 			conta3.setBanco("341 - BANCO ITAU UNIBANCO");
 			conta3.setNumero("46346-3");
 			conta3.setAgencia("4606");
