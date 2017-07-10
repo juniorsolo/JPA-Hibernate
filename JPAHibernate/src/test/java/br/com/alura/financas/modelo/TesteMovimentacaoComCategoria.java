@@ -24,6 +24,7 @@ public class TesteMovimentacaoComCategoria {
 		mov1.setTipo(TipoMovimentacao.SAIDA);
 		mov1.setValor(new BigDecimal("250.0"));
 		mov1.setCategorias(Arrays.asList(cat1,cat2));
+		mov1.setConta(conta);
 		
 		Movimentacao mov2 = new Movimentacao();
 		mov2.setData(Calendar.getInstance());
@@ -31,6 +32,7 @@ public class TesteMovimentacaoComCategoria {
 		mov2.setTipo(TipoMovimentacao.SAIDA);
 		mov2.setValor(new BigDecimal("110.0"));
 		mov2.setCategorias(Arrays.asList(cat1,cat2));
+		mov2.setConta(conta);
 		
 		EntityManager em = new JPAUtil().getEntityManager();
 		em.getTransaction().begin();
